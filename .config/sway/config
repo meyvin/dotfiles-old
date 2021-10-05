@@ -16,6 +16,7 @@ exec thunderbird
 exec nm-applet --indicator
 exec /usr/lib/geoclue-2.0/demos/agent
 exec gammastep-indicator
+exec corectrl
 exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 
@@ -50,7 +51,9 @@ assign [class="Ferdi"] 4
 
 # Window rules
 for_window [app_id="thunar"] floating enable; resize set 1024 768  
+for_window [app_id="Thunar" title="^Copying.*"] floating enable;
 for_window [app_id="vlc"] floating enable
+for_window [app_id="lutris"] floating enable
 for_window [class="Spotify"] move window to workspace 5
 for_window [title="^scratchterm$"] move scratchpad
 for_window [shell=".*"] title_format "%title :: %shell"

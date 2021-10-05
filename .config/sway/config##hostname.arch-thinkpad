@@ -50,6 +50,7 @@ assign [class="Ferdi"] 4
 
 # Window rules
 for_window [app_id="thunar"] floating enable; resize set 1024 768  
+for_window [app_id="Thunar" title="^Copying.*"] floating enable;
 for_window [app_id="vlc"] floating enable
 for_window [class="Spotify"] move window to workspace 5
 for_window [title="^scratchterm$"] move scratchpad
