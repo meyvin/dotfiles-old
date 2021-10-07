@@ -1,5 +1,8 @@
-source ~/.zsh-plugins/zsh-snap/znap.zsh
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
 # Init znap
+source ~/.zsh-plugins/zsh-snap/znap.zsh
 
 # Theme
 znap prompt romkatv/powerlevel10k
@@ -16,13 +19,13 @@ znap source lukechilds/zsh-nvm
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 
+# Plugin customisation
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
+
 # History 
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 # Enable colors
 autoload -U colors && colors
@@ -35,8 +38,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 compinit
 
-# Autosuggest plugin
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
 
 # ZSH Alias
 alias vi="vim"
@@ -45,8 +46,6 @@ alias gp="git push"
 alias gca="git commit -v -a"
 alias gcm="git checkout main"
 alias grh="git reset HEAD"
-alias display-work="xrandr --auto --output eDP --off"
-alias display-laptop="xrandr --output eDP --auto"
 alias wg-up="wg-quick up wg0"
 alias wg-down="wg-quick down wg0"
 alias ssh="TERM=xterm-256color ssh"
@@ -59,5 +58,6 @@ alias parrem="paru -Rsc"
 alias parup="paru -Syu"
 alias parsearch="paru -Ss"
 alias screen-record='wf-recorder -g "$(slurp)" -f "$HOME/Videos/$(date +%d-%m-%Y_%H-%M-%S).mp4"'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
