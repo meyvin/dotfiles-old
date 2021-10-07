@@ -14,8 +14,6 @@ set $laptop eDP-1
 # Autostart
 exec thunderbird
 exec nm-applet --indicator
-# exec /usr/lib/geoclue-2.0/demos/agent
-# exec gammastep-indicator
 exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
 
