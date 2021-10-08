@@ -9,14 +9,28 @@ set $filemanager thunar
 set $browser firefox-developer-edition
 set $menu wofi --show run 
 set $wallpaper ~/wallpaper.png
+set $lock_path ~/.config/sway/lock.sh
+set $idle_path ~/.config/sway/idle.sh
+set $screenshot_path ~/.config/sway/screenshot.sh
+set $env MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1
 
-# Styleutostart
-exec thunderbird
-exec nm-applet --indicator
-exec /usr/lib/geoclue-2.0/demos/agent
-exec gammastep-indicator
-exec alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+# GTK Theming
+exec_always {
+  gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
+  gsettings set org.gnome.desktop.interface icon-theme 'Tela-blue-dark'
+}
+
+# Autostart programs
+exec {
+  $env systemctl --user import-environment WAYLAND_DISPLAY DISPLAY SWAYSOCK
+  thunderbird
+  nm-applet --indicator
+  /usr/lib/geoclue-2.0/demos/agent
+  gammastep-indicator
+  alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
+  /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 
+  $idle_path
+}
 
 # Style
 output "*" bg $wallpaper fill
@@ -55,7 +69,7 @@ for_window [shell=".*"] title_format "%title :: %shell"
 bindsym $mod+Shift+Return exec $term
 bindsym $mod+Shift+f exec $filemanager
 bindsym $mod+Shift+b exec $browser
-bindsym $mod+End exec swaylock -i $lock_bg
+bindsym $mod+Shift+End exec $lock_path
 
 # Special Keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -68,16 +82,8 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# Lock and suspend
-exec swayidle -w \
-    timeout 300 'swaylock -f -i $wallpaper' \
-    timeout 600 'swaymsg "output * dpms off"' \
-        resume  'swaymsg "output * dpms on"'  \
-    timeout 900 'systemctl suspend ' \
-    before-sleep 'swaylock -f -i $wallpaper'
-
 # Screenshots
-bindsym Print exec ~/.local/bin/screenshot.sh
+bindsym Print exec $screenshot_path
  
 # Kill focused window
 bindsym $mod+Shift+c kill
@@ -185,12 +191,6 @@ bindsym $mod+r mode "resize"
 # Start Swaybar
 bar {
   swaybar_command waybar
-}
-
-# Touchpad settings
-input type:touchpad {
-    tap enabled
-    natural_scroll enabled
 }
 
 include /etc/sway/config.d/*
