@@ -14,6 +14,7 @@ set $idle_path ~/.config/sway/idle.sh
 set $screenshot_path ~/.config/sway/screenshot.sh
 set $env MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1
 set $laptop eDP-1
+set $texteditor gedit
 
 # GTK Theming
 exec_always {
@@ -178,6 +179,8 @@ bindsym $mod+a focus parent
 bindsym $mod+grave scratchpad show
 bindsym $mod+Shift+grave move scratchpad
 
+# Texteditor
+bindsym $mod+shift+t exec $texteditor
 # Resize
 mode "resize" {
   bindsym $left resize shrink width 10px

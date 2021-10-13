@@ -26,4 +26,4 @@ swaylock --screenshots --clock --indicator-idle-visible \
 	--separator-color 00000000 \
 	--fade-in 0.5 \
 	--effect-scale 0.5 --effect-blur 7x3 --effect-scale 2 \
-  -F
+  "$@"
