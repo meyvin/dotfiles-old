@@ -33,6 +33,9 @@ autoload -U colors && colors
 # vi mode
 bindkey -v
 
+# fix del key behaviour
+bindkey "^[[3~" delete-char
+
 zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
