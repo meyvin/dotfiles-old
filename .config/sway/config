@@ -69,6 +69,7 @@ assign [class="Code"] 3
 assign [class="Ferdi"] 4
 
 # Window rules
+for_window [app_id="file-roller"] floating enable; resize set 1024 768
 for_window [app_id="gnome-calculator"] floating enable
 for_window [app_id="thunar"] floating enable; resize set 1024 768  
 for_window [app_id="thunar" title="^Copying.*"] floating enable
