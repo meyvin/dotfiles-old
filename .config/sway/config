@@ -69,6 +69,7 @@ assign [class="Code"] 3
 assign [class="Ferdi"] 4
 
 # Window rules
+for_window [app_id="gnome-calculator"] floating enable
 for_window [app_id="thunar"] floating enable; resize set 1024 768  
 for_window [app_id="thunar" title="^Copying.*"] floating enable
 for_window [app_id="vlc"] floating enable
@@ -92,7 +93,7 @@ bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-
+bindsym XF86Calculator exec gnome-calculator
 # Screenshots
 bindsym Print exec $screenshot_path
  
