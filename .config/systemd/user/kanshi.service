@@ -1,0 +1,11 @@
+[Unit]
+Description=Kanshi allows you to define output profiles that are automatically enabled and disabled on hotplug.
+Documentation=https://github.com/emersion/kanshi
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi
+
+[Install]
+WantedBy=sway-session.target
