@@ -31,17 +31,13 @@ exec {
   /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
   wl-paste -t text --watch clipman store
   $idle_path
+  gammastep-indicator
 }
-
-# Thinkpad specific nsettings
-#bindswitch --reload --locked lid:on output $laptop disable
-#bindswitch --reload --locked lid:off output $laptop enable
 
 input type:touchpad {
     tap enabled
     natural_scroll enabled
 }
-
 
 # Style
 output "*" bg $wallpaper fill
@@ -95,6 +91,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Calculator exec gnome-calculator
+
 # Screenshots
 bindsym Print exec $screenshot_path
  
@@ -110,7 +107,11 @@ floating_modifier $mod normal
 bindsym $mod+Shift+q reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym Mod4+shift+e exec swaynag \
+  -t warning \
+  -m 'What do you want to do?' \
+  -b 'Poweroff' 'systemctl poweroff' \
+  -b 'Reboot' 'systemctl reboot'
 
 # Move your focus around
 bindsym $mod+$left focus left
