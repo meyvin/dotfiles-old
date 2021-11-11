@@ -20,6 +20,7 @@ set $mediaplayer celluloid
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
   gsettings set org.gnome.desktop.interface icon-theme 'Tela-blue-dark'
+  kanshi
 }
 
 # Autostart programs
@@ -31,7 +32,6 @@ exec {
   /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
   wl-paste -t text --watch clipman store
   $idle_path
-  kanshi
 }
 
 # Thinkpad specific nsettings
