@@ -4,7 +4,6 @@ export EDITOR="vim"
 export IMAGE="sxiv"
 export LIBSEAT_BACKEND=logind
 export MOZ_ENABLE_WAYLAND=1
-export NVM_LAZY_LOAD=true
 export OPENER="xdg-open"
 export QT_QPA_PLATFORM=xcb
 export READER="zathura"

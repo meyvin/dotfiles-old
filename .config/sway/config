@@ -13,8 +13,8 @@ set $lock_path ~/.config/sway/lock.sh
 set $idle_path ~/.config/sway/idle.sh
 set $screenshot_path ~/.config/sway/screenshot.sh
 set $env MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1
-set $laptop eDP-1
 set $texteditor gedit
+set $mediaplayer celluloid
 
 # GTK Theming
 exec_always {
@@ -31,11 +31,12 @@ exec {
   /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
   wl-paste -t text --watch clipman store
   $idle_path
+  kanshi
 }
 
 # Thinkpad specific nsettings
-bindswitch --reload --locked lid:on output $laptop disable
-bindswitch --reload --locked lid:off output $laptop enable
+#bindswitch --reload --locked lid:on output $laptop disable
+#bindswitch --reload --locked lid:off output $laptop enable
 
 input type:touchpad {
     tap enabled
@@ -73,7 +74,7 @@ for_window [app_id="file-roller"] floating enable; resize set 1024 768
 for_window [app_id="gnome-calculator"] floating enable
 for_window [app_id="thunar"] floating enable; resize set 1024 768  
 for_window [app_id="thunar" title="^Copying.*"] floating enable
-for_window [app_id="vlc"] floating enable
+for_window [app_id=$mediaplayer] floating enable
 for_window [class="Spotify"] move window to workspace 5
 for_window [title="^scratchterm$"] move scratchpad
 for_window [shell=".*"] title_format "%title :: %shell"
