@@ -20,7 +20,7 @@ set $mediaplayer celluloid
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
   gsettings set org.gnome.desktop.interface icon-theme 'Tela-blue-dark'
-  kanshi
+  pkill kanshi; exec kanshi
 }
 
 # Autostart programs
