@@ -15,12 +15,20 @@ set $screenshot_path ~/.config/sway/screenshot.sh
 set $env MOZ_ENABLE_WAYLAND=1 _JAVA_AWT_WM_NONREPARENTING=1
 set $texteditor gedit
 set $mediaplayer celluloid
+set $cursor_theme Bibata-Modern-Ice
+set $cursor_size 24
+
+seat seat0 xcursor_theme $cursor_theme $cursor_size
 
 # GTK Theming
 exec_always {
   gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
   gsettings set org.gnome.desktop.interface icon-theme 'Tela-blue-dark'
-}
+  gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme
+  gsettings set org.gnome.desktop.interface cursor-size $cursor_size
+ }
+
+# Mouse cursor
 
 # Autostart programs
 exec {
@@ -32,6 +40,12 @@ exec {
   wl-paste -t text --watch clipman store
   $idle_path
   gammastep-indicator
+}
+
+input * {
+    xkb_layout "us"
+    xkb_variant "altgr-intl"
+    xkb_options "compose:ralt"
 }
 
 input type:touchpad {
@@ -71,6 +85,7 @@ for_window [app_id="thunar"] floating enable; resize set 1024 768
 for_window [app_id="thunar" title="^Copying.*"] floating enable
 for_window [app_id=$mediaplayer] floating enable
 for_window [class="Spotify"] move window to workspace 5
+for_window [class="Sxiv"] floating enable
 for_window [title="^scratchterm$"] move scratchpad
 for_window [shell=".*"] title_format "%title :: %shell"
 

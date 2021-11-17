@@ -10,9 +10,6 @@ export READER="zathura"
 export TERMINAL="alacritty"
 export VISUAL="vim"
 export VIDEO="vlc"
-export XKB_DEFAULT_LAYOUT="us"
-export XKB_DEFAULT_OPTIONS=compose:menu,level3:ralt_switch
-export XKB_DEFAULT_VARIANT=altgr-intl
 
 typeset -U PATH path
 path=("$HOME/.local/bin" "$path[@]")
