@@ -18,30 +18,22 @@ set $mediaplayer celluloid
 set $cursor_theme Bibata-Modern-Ice
 set $cursor_size 24
 
-seat seat0 xcursor_theme $cursor_theme $cursor_size
-
-# GTK Theming
-exec_always {
-  gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'
-  gsettings set org.gnome.desktop.interface icon-theme 'Tela-blue-dark'
-  gsettings set org.gnome.desktop.interface cursor-theme $cursor_theme
-  gsettings set org.gnome.desktop.interface cursor-size $cursor_size
- }
-
 # Mouse cursor
+seat seat0 xcursor_theme $cursor_theme $cursor_size
 
 # Autostart programs
 exec {
-  $env systemctl --user import-environment WAYLAND_DISPLAY DISPLAY SWAYSOCK
-  thunderbird
-  nm-applet --indicator
-  alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
   /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-  wl-paste -t text --watch clipman store
+  $env systemctl --user import-environment WAYLAND_DISPLAY DISPLAY SWAYSOCK
   $idle_path
+  alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
   gammastep-indicator
+  nm-applet --indicator
+  thunderbird
+  wl-paste -t text --watch clipman store
 }
 
+# Input configuration
 input * {
     xkb_layout "us"
     xkb_variant "altgr-intl"
