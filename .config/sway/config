@@ -49,19 +49,20 @@ input type:touchpad {
 output "*" bg $wallpaper fill
 font pango: JetBrainsMono Nerd Font 12
 default_border pixel 2
+default_floating_border pixel 2
+gaps inner 10
 smart_gaps on
-gaps inner 5
-gaps outer 5
+smart_borders on
 hide_edge_borders smart
 focus_follows_mouse no
 focus_on_window_activation smart
 
 ## Window decoration
 # class                 border  backgr. text    indicator child_border
-client.focused          #88c0d0 #434c5e #eceff4 #8fbcbb   #88c0d0
-client.focused_inactive #88c0d0 #2e3440 #d8dee9 #4c566a   #4c566a
-client.unfocused        #88c0d0 #2e3440 #d8dee9 #4c566a   #4c566a
-client.urgent           #ebcb8b #ebcb8b #2e3440 #8fbcbb   #ebcb8b
+client.focused          #CDDEDE #434c5e #eceff4 #8fbcbb   #00ACBD
+client.focused_inactive #CDDEDE #2e3440 #d8dee9 #4c566a   #171D1D
+client.unfocused        #CDDEDE #2e3440 #d8dee9 #4c566a   #171D1D
+client.urgent           #F18CB1 #ebcb8b #2e3440 #8fbcbb   #171D1D
 
 # Assignments
 assign [app_id="firefoxdeveloperedition"] 1

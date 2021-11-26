@@ -180,52 +180,46 @@ font:
 
 colors:
   primary:
-    background: '#2e3440'
-    foreground: '#d8dee9'
-    dim_foreground: '#a5abb6'
+    background: '#171d1d'
+    foreground: '#b3c2c2'
+
   cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
-  vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
+    text: '#171d1d'
+    cursor: '#32a0ac'
+
   selection:
-    text: CellForeground
-    background: '#4c566a'
-  search:
-    matches:
-      foreground: CellBackground
-      background: '#88c0d0'
-    bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
+    text: '#171d1d'
+    background: '#1a9ba6'
+
   normal:
-    black: '#3b4252'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#88c0d0'
-    white: '#e5e9f0'
+    black: '#4b5454'
+    red: '#f18cb1'
+    green: '#00acbd'
+    yellow: '#c57b67'
+    blue: '#1a9ba6'
+    magenta: '#fca188'
+    cyan: '#208490'
+    white: '#b3c2c2'
+
   bright:
-    black: '#4c566a'
-    red: '#bf616a'
-    green: '#a3be8c'
-    yellow: '#ebcb8b'
-    blue: '#81a1c1'
-    magenta: '#b48ead'
-    cyan: '#8fbcbb'
-    white: '#eceff4'
+    black: '#657070'
+    red: '#EA9CBA'
+    green: '#29B6C4'
+    yellow: '#C78F7F'
+    blue: '#3EA8B1'
+    magenta: '#F3AD99'
+    cyan: '#4396A0'
+    white: '#cddede'
+
   dim:
-    black: '#373e4d'
-    red: '#94545d'
-    green: '#809575'
-    yellow: '#b29e75'
-    blue: '#68809a'
-    magenta: '#8c738c'
-    cyan: '#6d96a5'
-    white: '#aeb3bb'
+    black: '#313939'
+    red: '#C57693'
+    green: '#058F9D'
+    yellow: '#A26858'
+    blue: '#19828B'
+    magenta: '#CE8773'
+    cyan: '#1E6F79'
+    white: '#99a7a7'
 
 # Colors (Tomorrow Night)
 #colors:

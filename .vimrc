@@ -6,11 +6,11 @@ endif
 
 " Install plugins
 call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Color scheme
-colorscheme nord
+colo ThemerVim
+set background=dark
 
 " Don't try to be vi compatible
 set nocompatible
