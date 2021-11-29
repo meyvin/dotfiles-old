@@ -1,5 +1,5 @@
 /* colors */
-@define-color background_color rgba(23, 29, 29, 0.6);
+@define-color background_color rgba(23, 29, 29, 1.0);
 @define-color text_color #b3c2c2;
 @define-color accent_color #208490;
 @define-color bright_text_color #FFFFFF;

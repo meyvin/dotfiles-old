@@ -1,0 +1,28 @@
+default_border pixel 2
+default_floating_border pixel 2
+focus_follows_mouse no
+focus_on_window_activation smart
+font pango: JetBrainsMono Nerd Font 12
+gaps inner 10
+hide_edge_borders smart
+output "*" bg $wallpaper fill
+smart_borders on
+smart_gaps on
+
+assign [app_id="firefoxdeveloperedition"] 1
+assign [app_id="thunderbird"] 2
+assign [class="jetbrains-idea"] 3
+assign [class="Code"] 3
+assign [class="Ferdi"] 4
+
+for_window [app_id="celluloid"] floating enable
+for_window [app_id="file-roller"] floating enable; resize set 1024 768
+for_window [app_id="gnome-calculator"] floating enable
+for_window [app_id=$filemanager] floating enable; resize set 1024 768  
+for_window [app_id=$filemanager title="^Copying.*"] floating enable
+
+for_window [title="^scratchterm$"] move scratchpad
+for_window [shell=".*"] title_format "%title :: %shell"
+
+for_window [class="Spotify"] move window to workspace 5
+for_window [class="Sxiv"] floating enable

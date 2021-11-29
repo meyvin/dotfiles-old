@@ -1,0 +1,19 @@
+set $mod Mod4 
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $browser firefox-developer-edition
+set $filemanager thunar
+set $lock_path $HOME/.config/sway/scripts/lock.sh
+set $menu wofi --show run 
+set $screenshot_path $HOME/.config/sway/scripts/screenshot.sh
+set $term alacritty
+set $texteditor gedit
+set $wallpaper $HOME/wallpaper.png
+
+set $color1 #CDDEDE
+set $color2 #171D1D
+set $background_color #434c5e
+set $foreground_color #eceff4

@@ -1,0 +1,8 @@
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec alacritty --config-file $HOME/.config/alacritty/scratchterm.yml -t scratchterm
+exec gammastep-indicator
+exec nm-applet --indicator
+exec sway-audio-idle-inhibit
+exec systemctl --user import-environment; systemctl --user start sway-session.target
+exec thunderbird
+exec wl-paste -t text --watch clipman store
