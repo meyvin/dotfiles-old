@@ -102,7 +102,7 @@
         "󰕾"
       ]
     },
-    "on-click": "swaymsg exec '$term -e pulsemixer'"
+    "on-click": "swaymsg exec 'pavucontrol'"
   },
   "tray": {
     "icon-size": 21,

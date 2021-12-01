@@ -10,6 +10,7 @@ export READER="zathura"
 export TERMINAL="alacritty"
 export VISUAL="vim"
 export VIDEO="vlc"
+export WLR_NO_HARDWARE_CURSORS=1
 
 typeset -U PATH path
 path=("$HOME/.local/bin" "$path[@]")
