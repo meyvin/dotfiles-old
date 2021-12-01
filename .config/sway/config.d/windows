@@ -14,13 +14,14 @@ assign [app_id="thunderbird"] 2
 assign [class="jetbrains-idea"] 3
 assign [class="Code"] 3
 assign [class="Ferdi"] 4
+assign [class="TelegramDesktop"] 4
+assign [app_id="WhatsApp"] 4
 
 for_window [app_id="celluloid"] floating enable
 for_window [app_id="file-roller"] floating enable; resize set 1024 768
 for_window [app_id="gnome-calculator"] floating enable
 for_window [app_id=$filemanager] floating enable; resize set 1024 768  
 for_window [app_id=$filemanager title="^Copying.*"] floating enable
-
 for_window [title="^scratchterm$"] move scratchpad
 for_window [shell=".*"] title_format "%title :: %shell"
 
