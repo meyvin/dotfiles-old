@@ -41,7 +41,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 compinit
 
-
 # ZSH Alias
 alias vi="vim"
 alias gl="git pull"
@@ -63,6 +62,25 @@ alias parsearch="paru -Ss"
 alias refresh-mirrors="sudo reflector -c Netherlands -a 12 --sort rate --save /etc/pacman.d/mirrorlist"
 alias scratchterm="alacritty --config-file $HOME/.config/alacritty/scratchterm.yml -t scratchterm & disown"
 alias screen-record='wf-recorder -g "$(slurp)" -f "$HOME/Videos/$(date +%d-%m-%Y_%H-%M-%S).mp4"'
+
+# ZSH Functions
+n () 
+{
+    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+        echo "nnn is already running"
+        return
+    fi
+
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    nnn "-dP $@"
+
+    if [ -f "$NNN_TMPFILE" ]; then
+            . "$NNN_TMPFILE"
+            rm -f "$NNN_TMPFILE" > /dev/null
+    fi
+}
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
