@@ -1,4 +1,9 @@
 profile {
+  output DP-3 enable
+  output eDP-1 disable
+}
+
+profile {
   output DP-1 enable
 }
 
@@ -6,7 +11,4 @@ profile {
   output eDP-1 enable
 }
 
-profile {
-  output DP-3 enable
-  output eDP-1 disable
-}
+

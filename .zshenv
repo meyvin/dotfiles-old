@@ -15,8 +15,11 @@ export TERMINAL="alacritty"
 export VISUAL="vim"
 export VIDEO="vlc"
 
+# Gnome
+export GTK_THEME="Arc-Dark"
+
 # nnn
-export NNN_BMS="d:$HOME/Downloads;D:$HOME/Development"
+export NNN_BMS="d:$HOME/Downloads;D:$HOME/Development;h:$HOME"
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG="p:preview-tabbed"
 

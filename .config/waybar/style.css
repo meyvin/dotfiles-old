@@ -6,6 +6,7 @@
 @define-color warning_color #db7b55;
 @define-color error_color #Cd3f45;
 @define-color marker_color #208490;
+@define-color title_color #F18CB1;
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
@@ -59,12 +60,16 @@
 #memory,
 #network,
 #temperature,
-#clock,
 #pulseaudio,
 #backlight,
-#tray {
+#tray,
+#battery {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#clock {
+  padding: 0 9px 0 3px;
 }
 
 
@@ -129,6 +134,9 @@
 #window {
     font-weight: bold;
     color: @text_color;
+    border-left: 2px dotted @marker_color;
+    margin: 4px;
+    padding-left: 16px;
 }
 
 #workspaces {
