@@ -68,18 +68,14 @@
     padding-right: 10px;
 }
 
-#clock {
-  padding: 0 9px 0 3px;
-}
-
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
-
 #clock {
     font-weight: bold;
     background-color: @marker_color;
+    padding: 0 9px 0 7px;
 }
 
 #cpu {

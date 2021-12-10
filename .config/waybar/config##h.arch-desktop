@@ -4,9 +4,10 @@
   "modules-left": [
     "sway/workspaces",
     "sway/mode",
+    "sway/window"
   ],
   "modules-center": [
-    "sway/window"
+    ""
   ],
   "modules-right": [
     "network",
@@ -29,12 +30,12 @@
       "6": [],
     },
     "format-icons": {
-      "1": "󰈹",
-      "2": "󰇮",
-      "3": "󰊢",
-      "4": "󰭹",
-      "5": "󰝚",
-      "6": "",
+      "1": "",
+      "2": "ﯙ",
+      "3": "",
+      "4": "",
+      "5": "阮",
+      "6": "",
     }
   },
   "clock": {
