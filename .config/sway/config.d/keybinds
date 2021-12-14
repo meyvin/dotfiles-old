@@ -18,6 +18,9 @@ bindsym XF86Calculator exec gnome-calculator
 
 # Screenshots
 bindsym Print exec $screenshot_path
+
+# Screenshots
+bindsym $mod+Shift+m exec kanshi
  
 # Kill focused window
 bindsym $mod+Shift+c kill

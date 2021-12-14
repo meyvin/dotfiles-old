@@ -1,6 +1,8 @@
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec alacritty --config-file $HOME/.config/alacritty/scratchterm.yml -t scratchterm
+exec eval $(gnome-keyring-daemon --start)
 exec gammastep-indicator
+exec nextcloud
 exec nm-applet --indicator
 exec sway-audio-idle-inhibit
 exec systemctl --user import-environment; systemctl --user start sway-session.target
