@@ -1,11 +1,21 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Init znap
-source ~/.zsh-plugins/zsh-snap/znap.zsh
+# Install P10k Theme
+ZSH_THEMES_HOME="${ZDOTDIR:-$HOME/.config/zsh}/themes"
+if [[ -d $ZSH_THEMES_HOME/p10k ]]; then
+  source $ZSH_THEMES_HOME/p10k/powerlevel10k.zsh-theme
+else
+  mkdir -p ZSH_THEMES_HOME && git clone --depth=1 git@github.com:romkatv/powerlevel10k.git $ZSH_THEMES_HOME/p10k
+fi
 
-# Theme
-znap prompt romkatv/powerlevel10k
+# Install PZ plugin manager
+PZ_PLUGIN_HOME="${ZDOTDIR:-$HOME/.config/zsh}/plugins"
+if [[ -d $PZ_PLUGIN_HOME/pz ]]; then
+  source $PZ_PLUGIN_HOME/pz/pz.zsh
+else
+  mkdir -p PZ_PLUGIN_HOME && git clone git@github.com:mattmc3/pz.git $PZ_PLUGIN_HOME/pz
+fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -15,17 +25,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Plugins
-znap source lukechilds/zsh-nvm
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
+pz source lukechilds/zsh-nvm
+pz source zsh-users/zsh-autosuggestions
+pz source zsh-users/zsh-syntax-highlighting
 
-# Plugin customisation
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
-
-# History 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+# Auto completion
+autoload -Uz compinit; compinit
 
 # Enable colors
 autoload -U colors && colors

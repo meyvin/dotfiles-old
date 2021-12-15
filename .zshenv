@@ -24,6 +24,13 @@ export NNN_BMS="d:$HOME/Downloads;D:$HOME/Development;h:$HOME"
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG="p:preview-tabbed"
 
+# ZSH
+export HISTFILE=~/.histfile
+export HISTSIZE=1000
+export NVM_LAZY_LOAD=true
+export SAVEHIST=1000
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"
+
 typeset -U PATH path
 path=("$HOME/.local/bin" "$path[@]")
 
