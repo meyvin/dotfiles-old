@@ -4,6 +4,7 @@ export LIBSEAT_BACKEND=logind
 export MOZ_ENABLE_WAYLAND=1
 export SSH_AUTH_SOCK
 export WLR_NO_HARDWARE_CURSORS=1
+export XDG_RUNTIME_DIRS=$XDG_RUNTIME_DIRS:/var/lib/flatpak/exports/share:~/.local/share/flatpak/exports/share
 
 # Applications
 export BROWSER="firefox-developer-edition"

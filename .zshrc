@@ -6,7 +6,7 @@ ZSH_THEMES_HOME="${ZDOTDIR:-$HOME/.config/zsh}/themes"
 if [[ -d $ZSH_THEMES_HOME/p10k ]]; then
   source $ZSH_THEMES_HOME/p10k/powerlevel10k.zsh-theme
 else
-  mkdir -p ZSH_THEMES_HOME && git clone --depth=1 git@github.com:romkatv/powerlevel10k.git $ZSH_THEMES_HOME/p10k
+  mkdir -p $ZSH_THEMES_HOME; git clone --depth=1 git@github.com:romkatv/powerlevel10k.git $ZSH_THEMES_HOME/p10k
 fi
 
 # Install PZ plugin manager
@@ -14,7 +14,18 @@ PZ_PLUGIN_HOME="${ZDOTDIR:-$HOME/.config/zsh}/plugins"
 if [[ -d $PZ_PLUGIN_HOME/pz ]]; then
   source $PZ_PLUGIN_HOME/pz/pz.zsh
 else
-  mkdir -p PZ_PLUGIN_HOME && git clone git@github.com:mattmc3/pz.git $PZ_PLUGIN_HOME/pz
+  mkdir -p PZ_PLUGIN_HOME; git clone git@github.com:mattmc3/pz.git $PZ_PLUGIN_HOME/pz
+fi
+
+# Install Docker Completion
+DOCKER_COMPLETION_PATH="${ZDOTDIR:-$PZ_PLUGIN_HOME}/docker-completion"
+if [[ -f $DOCKER_COMPLETION_PATH/_docker-compose ]]; then
+  fpath=($DOCKER_COMPLETION_PATH $fpath)
+else
+  mkdir -p $DOCKER_COMPLETION_PATH; \
+  curl \
+  -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose \
+  -o $DOCKER_COMPLETION_PATH/_docker-compose
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -30,7 +41,7 @@ pz source zsh-users/zsh-autosuggestions
 pz source zsh-users/zsh-syntax-highlighting
 
 # Auto completion
-autoload -Uz compinit; compinit
+autoload -Uz compinit; compinit -i
 
 # Enable colors
 autoload -U colors && colors
@@ -72,19 +83,19 @@ alias screen-record='wf-recorder -g "$(slurp)" -f "$HOME/Videos/$(date +%d-%m-%Y
 # ZSH Functions
 n () 
 {
-    if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
-        echo "nnn is already running"
-        return
-    fi
+  if [ -n $NNNLVL ] && [ "${NNNLVL:-0}" -ge 1 ]; then
+    echo "nnn is already running"
+    return
+  fi
 
-    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+  export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
 
-    nnn "-dP $@"
+  nnn "-dP $@"
 
-    if [ -f "$NNN_TMPFILE" ]; then
-            . "$NNN_TMPFILE"
-            rm -f "$NNN_TMPFILE" > /dev/null
-    fi
+  if [ -f "$NNN_TMPFILE" ]; then
+    . "$NNN_TMPFILE"
+    rm -f "$NNN_TMPFILE" > /dev/null
+  fi
 }
 
 
