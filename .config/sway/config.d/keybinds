@@ -2,7 +2,6 @@
 bindsym $mod+Shift+Return exec $term
 bindsym $mod+Shift+f exec $filemanager
 bindsym $mod+Shift+b exec $browser
-bindsym $mod+Shift+End exec $lock_path
 
 # Special Keys
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
@@ -15,6 +14,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86Calculator exec gnome-calculator
+
+# Lid close
+bindswitch --reload --locked lid:on exec 'swaylock -f --screenshots'
 
 # Screenshots
 bindsym Print exec $screenshot_path

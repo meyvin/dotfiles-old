@@ -7,7 +7,6 @@ set $right l
 set $browser firefox-developer-edition
 set $filemanager thunar
 set $gnome_schema org.gnome.desktop.interface
-set $lock_path $HOME/.config/sway/scripts/lock.sh
 set $menu wofi --show run 
 set $screenshot_path $HOME/.config/sway/scripts/screenshot.sh
 set $term alacritty

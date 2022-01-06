@@ -28,6 +28,7 @@ fi
 pz source lukechilds/zsh-nvm
 pz source zsh-users/zsh-autosuggestions
 pz source zsh-users/zsh-syntax-highlighting
+pz source ariaieboy/laravel-sail
 
 # Auto completion
 autoload -Uz compinit; compinit
