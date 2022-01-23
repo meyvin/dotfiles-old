@@ -1,5 +1,6 @@
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec eval $(gnome-keyring-daemon --start)
+exec foot --server
 exec gammastep-indicator
 exec nextcloud
 exec nm-applet --indicator
