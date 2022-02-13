@@ -9,7 +9,7 @@
   "modules-right": [
     "network",
     "memory",
-    "pulseaudio",
+    "custom/pipewire",
     "tray",
     "clock"
   ],
@@ -105,4 +105,15 @@
     "icon-size": 21,
     "spacing": 5
   },
-}
+    "custom/pipewire": {
+    "format": " {icon} {percentage}% ",
+    "return-type": "json",
+    "signal": 8,
+    "interval": "once",
+    "format-icons": {
+        "mute": "󰖁",
+        "default": ["", "", "墳", ""],
+    },
+    "exec": "pw-volume status"
+  },
+} 

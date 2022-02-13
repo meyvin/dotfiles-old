@@ -13,7 +13,7 @@
     "network",
     "memory",
     "temperature",
-    "pulseaudio",
+    "custom/pipewire",
     "battery",
     "tray",
     "clock"
@@ -120,5 +120,16 @@
   	"format": "{icon}  {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25
-  }
+  },
+    "custom/pipewire": {
+    "format": " {icon} {percentage}% ",
+    "return-type": "json",
+    "signal": 8,
+    "interval": "once",
+    "format-icons": {
+        "mute": "󰖁",
+        "default": ["", "", "墳", ""],
+    },
+    "exec": "pw-volume status"
+  },
 }
