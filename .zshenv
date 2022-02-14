@@ -7,8 +7,9 @@ export MOZ_ENABLE_WAYLAND=1
 export MOZ_WEBRENDER=1
 export SSH_AUTH_SOCK
 export WLR_NO_HARDWARE_CURSORS=1
+export XDG_CURRENT_DESKTOP=Unity
 export XDG_RUNTIME_DIRS=$XDG_RUNTIME_DIRS:/var/lib/flatpak/exports/share:~/.local/share/flatpak/exports/share
-export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_TYPE=Wayland
 
 # Applications
 export BROWSER="firefox-developer-edition"
