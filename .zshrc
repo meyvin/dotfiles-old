@@ -6,7 +6,7 @@ ZSH_THEMES_HOME="${ZDOTDIR:-$HOME/.config/zsh}/themes"
 if [[ -d $ZSH_THEMES_HOME/p10k ]]; then
   source $ZSH_THEMES_HOME/p10k/powerlevel10k.zsh-theme
 else
-  mkdir -p $ZSH_THEMES_HOME; git clone --depth=1 git@github.com:romkatv/powerlevel10k.git $ZSH_THEMES_HOME/p10k
+  mkdir -p $ZSH_THEMES_HOME; git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_THEMES_HOME/p10k
 fi
 
 # Install PZ plugin manager
@@ -14,7 +14,7 @@ PZ_PLUGIN_HOME="${ZDOTDIR:-$HOME/.config/zsh}/plugins"
 if [[ -d $PZ_PLUGIN_HOME/pz ]]; then
   source $PZ_PLUGIN_HOME/pz/pz.zsh
 else
-  mkdir -p PZ_PLUGIN_HOME; git clone git@github.com:mattmc3/pz.git $PZ_PLUGIN_HOME/pz
+  mkdir -p PZ_PLUGIN_HOME; git clone --branch pz https://github.com/mattmc3/antidote.git $PZ_PLUGIN_HOME/pz
 fi
 
 # Install Docker Completion
