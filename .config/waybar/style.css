@@ -62,8 +62,7 @@
 #temperature,
 #pulseaudio,
 #backlight,
-#tray,
-#battery {
+#tray {
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -72,10 +71,15 @@
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
+#battery {
+    background-color: @marker_color;
+    padding: 0 8px 0 12px;
+}
+
 #clock {
     font-weight: bold;
     background-color: @marker_color;
-    padding: 0 9px 0 7px;
+    padding: 0 9px 0 0;
 }
 
 #cpu {
@@ -149,3 +153,10 @@
 #workspaces button.focused {
     border-top: 2px solid @marker_color;
 }
+
+#custom-notification {
+    font-family: "NotoSansMono Nerd Font";
+    font-weight: bold;
+    background-color: @marker_color;
+    padding-right: 6px;
+  }
