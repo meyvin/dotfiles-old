@@ -2,16 +2,16 @@
   "layer": "bottom",
   "height": 30,
   "modules-left": [
-    "sway/workspaces",
-    "sway/mode",
-    "sway/window"
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    ""
   ],
   "modules-right": [
-    "network",
-    "memory",
-    "custom/pipewire",
     "tray",
-    "clock"
+    "battery",
+    "clock",
+    "custom/notification"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -23,7 +23,7 @@
       "3": [],
       "4": [],
       "5": [],
-      "6": [],
+      "6": []
     },
     "format-icons": {
       "1": "",
@@ -31,14 +31,14 @@
       "3": "",
       "4": "",
       "5": "阮",
-      "6": "",
+      "6": ""
     }
   },
   "clock": {
     "interval": 60,
     "format": "{:%e %b %Y %H:%M}",
     "tooltip": true,
-    "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt>{calendar}</tt>"
   },
   "cpu": {
     "interval": 5,
@@ -50,11 +50,27 @@
     "on-click": "swaymsg exec '$term -e htop'"
   },
   "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "  {essid} ({signalStrength}%)",
     "format-ethernet": " {ipaddr}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ipaddr}"
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
   "memory": {
     "interval": 5,
@@ -105,15 +121,15 @@
     "icon-size": 21,
     "spacing": 5
   },
-    "custom/pipewire": {
-    "format": " {icon} {percentage}% ",
-    "return-type": "json",
-    "signal": 8,
-    "interval": "once",
-    "format-icons": {
-        "mute": "󰖁",
-        "default": ["", "", "墳", ""],
-    },
-    "exec": "pw-volume status"
-  },
-} 
+	"battery": {
+  	"bat": "BAT0",
+  	"interval": 60,
+  	"states": {
+  		"warning": 30,
+  		"critical": 15
+  	},
+  	"format": "{icon}  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  }
+}
