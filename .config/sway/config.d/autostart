@@ -1,10 +1,12 @@
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec avizo-service
 exec blueman-applet
 exec eval $(gnome-keyring-daemon --start)
 exec foot --server
 exec nextcloud
 exec nm-applet --indicator
 exec sway-audio-idle-inhibit
+exec swaync
 exec systemctl --user import-environment
 exec systemctl --user start sway-session.target
 exec thunderbird
