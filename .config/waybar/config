@@ -2,15 +2,16 @@
   "layer": "bottom",
   "height": 30,
   "modules-left": [
-    "sway/workspaces"
+    "sway/workspaces",
+    "idle_inhibitor"
   ],
   "modules-center": [
-    ""
+    "clock"
   ],
   "modules-right": [
     "tray",
+    "custom/border-left",
     "battery",
-    "clock",
     "custom/notification"
   ],
   "sway/workspaces": {
@@ -48,6 +49,13 @@
       "critical": 90
     },
     "on-click": "swaymsg exec '$term -e htop'"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": " ",
+        "deactivated": " ﯈"
+    }
   },
   "network": {
     "format-wifi": "  {essid} ({signalStrength}%)",
@@ -131,5 +139,13 @@
   	"format": "{icon}  {capacity}%",
     "format-icons": ["", "", "", "", ""],
     "max-length": 25
+  },
+  "custom/border-right": {
+    "format": "◗",
+    "tooltip": false
+  },
+  "custom/border-left": {
+    "format": "◖",
+    "tooltip": false
   }
 }

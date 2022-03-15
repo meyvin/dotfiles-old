@@ -78,7 +78,6 @@
 
 #clock {
     font-weight: bold;
-    background-color: @marker_color;
     padding: 0 9px 0 0;
 }
 
@@ -160,3 +159,19 @@
     background-color: @marker_color;
     padding-right: 6px;
   }
+
+#custom-border-left {
+    color: @marker_color;
+    padding: 0px;
+    margin: -17px -15px -13px 0px;
+    font-family: "FuraCode Nerd Font";
+    font-size: 40px;
+}
+
+#custom-border-right {
+	color: @marker_color;
+	padding: 0px;
+	margin: -17px 0px -13px -15px;
+	font-family: "FuraCode Nerd Font";
+	font-size: 40px;
+}
