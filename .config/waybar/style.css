@@ -153,6 +153,10 @@
     border-top: 2px solid @marker_color;
 }
 
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
     font-weight: bold;
