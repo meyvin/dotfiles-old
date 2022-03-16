@@ -7,7 +7,7 @@ effect-vignette=0.5:0.5
 fade-in=0.1
 ignore-empty-password
 indicator-idle-visible
-indicator-radiuss=100
+indicator-radius=100
 indicator-thickness=7
 inside-color=00000088
 key-h1-color=be5046
