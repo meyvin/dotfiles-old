@@ -10,7 +10,7 @@ indicator-idle-visible
 indicator-radius=100
 indicator-thickness=7
 inside-color=00000088
-key-h1-color=be5046
+key-hl-color=be5046
 line-color=00000000
 ring-color=455a64
 separator-color=00000000
