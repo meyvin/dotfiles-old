@@ -3,7 +3,7 @@ seat seat0 xcursor_theme Simp1e 24
 
 # GTK app settings
 exec_always {
-    gsettings set $gnome_schema gtk-theme 'Ark-Dark-solid'
+    gsettings set $gnome_schema gtk-theme 'Bubble-Darker-Blue'
     gsettings set $gnome_schema icon-theme 'Tela-dark'
     gsettings set $gnome_schema cursor-theme 'Simp1e'
     gsettings set $gnome_schema font-name 'Cantarell 11'
