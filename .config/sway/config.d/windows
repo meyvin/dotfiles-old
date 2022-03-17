@@ -10,7 +10,7 @@ smart_borders on
 smart_gaps on
 
 assign [app_id="firefoxdeveloperedition"] 1
-assign [app_id="thunderbird"] 3
+assign [class="Thunderbird"] 3
 assign [class="jetbrains-idea"] 2
 assign [class="Code"] 2
 assign [class="Ferdi"] 4
