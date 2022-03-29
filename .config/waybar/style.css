@@ -1,12 +1,14 @@
 /* colors */
 @define-color background_color rgba(23, 29, 29, 0.9);
 @define-color text_color #b3c2c2;
-@define-color accent_color #208490;
-@define-color bright_text_color #FFFFFF;
 @define-color warning_color #db7b55;
 @define-color error_color #Cd3f45;
-@define-color marker_color #208490;
-@define-color title_color #F18CB1;
+@define-color marker_color #00406c;
+@define-color marker_color2 #003a61;
+@define-color marker_color3 #003356;
+@define-color marker_color4 #002e4e;
+@define-color marker_color5 #002945;
+
 /* -----------------------------------------------------------------------------
  * Keyframes
  * -------------------------------------------------------------------------- */
@@ -72,7 +74,7 @@
  * Module styles
  * -------------------------------------------------------------------------- */
 #battery {
-    background-color: @marker_color;
+    background-color: @marker_color4;
     padding: 0 8px 0 12px;
 }
 
@@ -111,11 +113,11 @@
 }
 
 #pulseaudio {
-    background-color: rgba(0, 0, 0, 0.0);
+    background-color: @marker_color2;
 }
 
 #pulseaudio.muted {
-    color: @warning_color;
+    color: @warning_color3;
 }
 
 #temperature {
@@ -160,22 +162,8 @@
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
     font-weight: bold;
-    background-color: @marker_color;
-    padding-right: 6px;
-  }
-
-#custom-border-left {
-    color: @marker_color;
-    padding: 0px;
-    margin: -17px -15px -13px 0px;
-    font-family: "FuraCode Nerd Font";
-    font-size: 40px;
-}
-
-#custom-border-right {
-	color: @marker_color;
-	padding: 0px;
-	margin: -17px 0px -13px -15px;
-	font-family: "FuraCode Nerd Font";
-	font-size: 40px;
+    font-size: 16px;
+    color: @text_color;
+    background-color: @marker_color5;
+    padding: 0 6px;
 }

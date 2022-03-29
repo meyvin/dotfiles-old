@@ -10,7 +10,7 @@
   ],
   "modules-right": [
     "tray",
-    "custom/border-left",
+    "pulseaudio",
     "battery",
     "custom/notification"
   ],
@@ -35,6 +35,17 @@
       "6": ""
     }
   },
+  "battery": {
+  	"bat": "BAT0",
+  	"interval": 60,
+  	"states": {
+  		"warning": 30,
+  		"critical": 15
+  	},
+  	"format": "{icon}  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
+  },
   "clock": {
     "interval": 60,
     "format": "{:%e %b %Y %H:%M}",
@@ -50,28 +61,22 @@
     },
     "on-click": "swaymsg exec '$term -e htop'"
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-        "activated": " ",
-        "deactivated": " ﯈"
-    }
+  "custom/border-right": {
+    "format": "◗",
+    "tooltip": false
   },
-  "network": {
-    "format-wifi": "  {essid} ({signalStrength}%)",
-    "format-ethernet": " {ipaddr}",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ipaddr}"
+  "custom/border-left": {
+    "format": "◖",
+    "tooltip": false
   },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": ""
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -79,6 +84,13 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": " ",
+        "deactivated": " ﯈"
+    }
   },
   "memory": {
     "interval": 5,
@@ -89,22 +101,12 @@
     },
     "on-click": "swaymsg exec '$term -e htop'"
   },
-  "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
-    "critical-threshold": 90,
-    "interval": 5,
-    "format": "{icon}{temperatureC}°C",
-    "format-icons": [
-      "󱃃",
-      "󰔏",
-      "󰔐"
-    ],
-    "tooltip": true,
-    "on-click": "swaymsg exec '$term -e 'watch sensors''"
-  },
-  "sway/window": {
-    "format": "{}",
-    "max-length": 120
+  "network": {
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": " {ipaddr}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ipaddr}"
   },
   "pulseaudio": {
     "format": "{icon}{volume}%  󰍬{format_source}",
@@ -125,27 +127,25 @@
     },
     "on-click": "swaymsg exec 'pavucontrol'"
   },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 120
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 90,
+    "interval": 5,
+    "format": "{icon}{temperatureC}°C",
+    "format-icons": [
+      "󱃃",
+      "󰔏",
+      "󰔐"
+    ],
+    "tooltip": true,
+    "on-click": "swaymsg exec '$term -e 'watch sensors''"
+  },
   "tray": {
     "icon-size": 21,
     "spacing": 5
-  },
-	"battery": {
-  	"bat": "BAT0",
-  	"interval": 60,
-  	"states": {
-  		"warning": 30,
-  		"critical": 15
-  	},
-  	"format": "{icon}  {capacity}%",
-    "format-icons": ["", "", "", "", ""],
-    "max-length": 25
-  },
-  "custom/border-right": {
-    "format": "◗",
-    "tooltip": false
-  },
-  "custom/border-left": {
-    "format": "◖",
-    "tooltip": false
   }
 }
