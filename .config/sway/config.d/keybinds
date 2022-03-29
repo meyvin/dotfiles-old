@@ -4,10 +4,10 @@ bindsym $mod+Shift+f exec $filemanager
 bindsym $mod+Shift+b exec $browser
 
 # Special Keys
-bindsym XF86AudioRaiseVolume exec volumectl -u up
-bindsym XF86AudioLowerVolume exec volumectl -u down
-bindsym XF86AudioMute exec volumectl toggle-mute
-bindsym XF86AudioMicMute exec volumectl -m toggle-mute
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set 'PCM' 6+
+bindsym XF86AudioLowerVolume exec amixer -c 0 set 'PCM' 6-
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle 
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUp exec lightctl up
 bindsym XF86MonBrightnessDown exec lightctl down
 bindsym XF86AudioPlay exec playerctl play-pause

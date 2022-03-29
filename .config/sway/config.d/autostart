@@ -4,6 +4,7 @@ exec blueman-applet
 exec eval $(gnome-keyring-daemon --start)
 exec foot --server
 exec jetbrains-toolbox
+exec newsflash
 exec nextcloud
 exec nm-applet --indicator
 exec sway-audio-idle-inhibit
