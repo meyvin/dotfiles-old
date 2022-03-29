@@ -23,6 +23,7 @@ alias parinst="paru -S"
 alias parrem="paru -Rsc"
 alias parup="paru -Syu"
 alias parsearch="paru -Ss"
+alias sail="./vendor/bin/sail"
 alias vi="vim"
 
 #####
