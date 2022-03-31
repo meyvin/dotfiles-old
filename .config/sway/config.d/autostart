@@ -5,7 +5,7 @@ exec eval $(gnome-keyring-daemon --start)
 exec foot --server
 exec jetbrains-toolbox
 exec newsflash
-exec nextcloud
+exec "sh -c 'sleep 10; exec nextcloud'"
 exec nm-applet --indicator
 exec sway-audio-idle-inhibit
 exec swaync
